@@ -1,4 +1,5 @@
 from board import Board
+import pyautogui
 
 def main():
     user_rows = int(input('how many rows? '))
@@ -8,13 +9,15 @@ def main():
 
     game_of_life_board.draw_board()
 
+
     user_action = ''
     while user_action != 'q':
-        user_action = input('Press enter to add generation or q to quit:')
-
+        for i in range(5):
+            user_action = input()
+            pyautogui.press("enter")
+       
         if user_action == '':
             game_of_life_board.update_board()
             game_of_life_board.draw_board()
-
-
+        
 main()
