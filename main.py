@@ -9,18 +9,21 @@ def main():
 
     game_of_life_board.draw_board()
 
-
+    generation = 0
     user_action = ''
     print ('Press enter to begin')
     print ('')
-    print ('To end spam q, sorry about that')
+    print ('To stop spam q, sorry about that')
     while user_action != 'q':
         for i in range(5):
             user_action = input()
             pyautogui.press("enter")
        
         if user_action == '':
+            generation += 1
             game_of_life_board.update_board()
             game_of_life_board.draw_board()
+            
+            print ('Generation: ' + str(generation))
         
 main()
