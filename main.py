@@ -11,6 +11,9 @@ def main():
 
 
     user_action = ''
+    print ('Press enter to begin')
+    print ('')
+    print ('To end spam q, sorry about that')
     while user_action != 'q':
         for i in range(5):
             user_action = input()
